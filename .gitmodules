@@ -1,0 +1,24 @@
+[submodule "system"]
+	path = system
+	url = https://github.com/kohana/core.git
+[submodule "modules/database"]
+	path = modules/database
+	url = http://github.com/kohana/database.git
+[submodule "modules/orm"]
+	path = modules/orm
+	url = http://github.com/kohana/orm.git
+[submodule "modules/auth"]
+	path = modules/auth
+	url = http://github.com/kohana/auth.git
+[submodule "modules/pagination"]
+	path = modules/pagination
+	url = https://github.com/kohana/pagination.git
+[submodule "modules/oauth"]
+	path = modules/oauth
+	url = https://github.com/kohana/oauth.git
+[submodule "modules/useradmin"]
+	path = modules/useradmin
+	url = https://github.com/mixu/useradmin.git
+[submodule "modules/email"]
+	path = modules/email
+	url = https://github.com/banks/kohana-email
