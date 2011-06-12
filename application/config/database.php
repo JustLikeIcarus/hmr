@@ -17,7 +17,7 @@ return array
 			 *
 			 * Ports and sockets may be appended to the hostname.
 			 */
-			'hostname'   => 'localhost',
+			'hostname'   => 'localhost:/tmp/mysql/lajuana.sock',
 			'username'   => 'gregory',
 			'password'   => 'x4NKSG6y',
 			'persistent' => FALSE,
