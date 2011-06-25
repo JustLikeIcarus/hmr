@@ -13,7 +13,7 @@ $form->info_class = 'info block';
 ?>
 <div id="box">
    <div class="block">
-      <h1><?php echo __('Todays HMR Info'); ?></h1>
+      <h1><?php echo $title ?></h1>
       <div class="content meal_info">
 <?php
 echo $form->open();
