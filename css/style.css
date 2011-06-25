@@ -580,3 +580,15 @@ background: #FFF url(/img/small/yahoo.png) no-repeat center center;
 }
 
 
+.meal_info ul li {
+float:left;
+}
+
+.li_label {
+clear: both; padding-right: 20px;
+}
+
+input.submit {
+clear:both;
+display:block;
+}
