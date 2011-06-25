@@ -585,7 +585,7 @@ float:left;
 }
 
 .li_label {
-clear: both; padding-right: 20px;
+clear: both; width:100px;
 }
 
 input.submit {
