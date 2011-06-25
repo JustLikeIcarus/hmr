@@ -9,7 +9,7 @@ class Controller_Welcome extends Controller_App {
 	}
 	public function action_meal()
 	{
-		$this->template->title = _('Meal Info');
+		$this->template->title = __('Meal Info');
 		$this->template->content = View::factory('meal_info');
 	}
 } // End Welcome
