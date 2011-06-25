@@ -13,5 +13,6 @@ class Controller_Welcome extends Controller_App {
 		$title = 'Meal Info for '.$date;
 		$this->template->title = $title;
 		$this->template->content = View::factory('meal_info');
+		$this->template->content->title = $title;
 	}
 } // End Welcome
