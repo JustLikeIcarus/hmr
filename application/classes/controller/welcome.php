@@ -7,5 +7,9 @@ class Controller_Welcome extends Controller_App {
 	{
 		$this->response->body('hello, world!');
 	}
-
+	public function action_meal()
+	{
+		$this->template->title = _('Meal Info');
+		$this->template->content = View::factory('meal_info');
+	}
 } // End Welcome
