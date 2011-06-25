@@ -9,7 +9,9 @@ class Controller_Welcome extends Controller_App {
 	}
 	public function action_meal()
 	{
-		$this->template->title = __('Meal Info');
+		$date = date('l jS \of F Y');
+		$title = 'Meal Info for '.$date;
+		$this->template->title = $title;
 		$this->template->content = View::factory('meal_info');
 	}
 } // End Welcome
