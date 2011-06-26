@@ -11,6 +11,7 @@
 <script type="text/javascript" >
 
 $(document).ready(function() {
+	(function($, undefined ) {
 $.widget( "mobile.selectmenu", $.mobile.widget, {
 	options: {
 		theme: null,
@@ -38,8 +39,9 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 
 			selectID = select.attr( "id" ),
 
-			label = $( 'label[for="'+ selectID +'"]' ).addClass( "ui-select" ),
+			label = $( 'label[for="'+ selectID +'"]' ).addClass( "ui-select" ).hide(),
 
+			
 			//IE throws an exception at options.item() function when
 			//there is no selected item
 			//select first in this case
@@ -52,7 +54,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 					"aria-haspopup": "true",
 					"aria-owns": menuId
 				}) )
-				.text( $( select[0].options.item( selectedIndex ) ).text() )
+				.text(label.text()+' '+ $( select[0].options.item( selectedIndex ) ).text() )
 				.insertBefore( select )
 				.buttonMarkup({
 					theme: o.theme,
@@ -396,6 +398,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 	},
 
 	refresh: function( forceRebuild ){
+		
 		var self = this,
 			select = this.element,
 			isMultiple = this.isMultiple,
@@ -415,7 +418,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 			.find( ".ui-btn-text" )
 			.text(function(){
 				if( !isMultiple ){
-					return selected.text();
+					return $('label[for="'+select.attr('id')+'"]').text()+' '+selected.text();
 				}
 
 				return selected.length ?
@@ -591,6 +594,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 		return this._setOption( "disabled", false );
 	}
 });
+})( jQuery );
 });
 
 
@@ -611,7 +615,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 			<form action="/index.php/" method="post" accept-charset="utf-8">
 <div data-role="fieldcontain">				
 <label for="shakes">Shakes:</label>
-<select name="shakes">
+<select name="shakes" id="shakes">
 <option value="0">0</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -639,7 +643,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 </div>
 <div data-role="fieldcontain">
 <label for="entree">Entrees:</label>
-<select name="entree">
+<select name="entree"  id="entree">
 
 <option value="0">0</option>
 <option value="1">1</option>
@@ -668,7 +672,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 </div>
 <div data-role="fieldcontain">
 <label for="bars">Bars:</label>
-<select name="Bars">
+<select name="bars" id="bars">
 <option value="0">0</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -695,7 +699,8 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 </select>
 </div>
 <div data-role="fieldcontain">
-<label for="vegetables">Vegetables:</label><select name="Vegetables">
+<label for="vegetables">Vegetables:</label>
+<select name="vegetables"  id="vegetables">
 <option value="0">0</option>
 
 <option value="1">1</option>
@@ -724,7 +729,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 </div>
 <div data-role="fieldcontain">
 <label for="fruits">Fruits:</label>
-<select name="Fruits">
+<select name="fruits" id="fruits">
 <option value="0">0</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -752,7 +757,7 @@ $.widget( "mobile.selectmenu", $.mobile.widget, {
 </div>
 <div data-role="fieldcontain">
 <label for="notes">Notes:</label>
-<textarea name="notes" cols="50" rows="10"></textarea>
+<textarea name="notes"  id="notes" cols="50" rows="10"></textarea>
 </div>
 <div data-role="fieldcontain">
 <input type="submit" value="Save" class="submit" /></form>
