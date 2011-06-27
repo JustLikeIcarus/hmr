@@ -2,7 +2,7 @@
 
 class Controller_Welcome extends Controller_App {
 	public $auth_required = 'login'; // FALSE | string | array
-	public $template = 'template/useradmin';
+	public $template = 'template/mobile';
 	public function action_index()
 	{
 		$this->response->body('hello, world!');
@@ -10,9 +10,9 @@ class Controller_Welcome extends Controller_App {
 	public function action_meal()
 	{
 		$date = date('l jS \of F Y');
-		$title = 'Meal Info for '.$date;
+		$title = $date;
 		$this->template->title = $title;
-		$this->template->content = View::factory('meal_info');
+		$this->template->content = View::factory('mobile/meal_info');
 		$this->template->content->title = $title;
 	}
 } // End Welcome
