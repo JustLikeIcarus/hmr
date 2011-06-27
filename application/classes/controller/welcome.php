@@ -13,6 +13,6 @@ class Controller_Welcome extends Controller_App {
 		$title = $date;
 		$this->template->title = $title;
 		$this->template->content = View::factory('mobile/meal_info');
-		$this->template->content->title = $title;
+		$this->template->content->header = $title;
 	}
 } // End Welcome
